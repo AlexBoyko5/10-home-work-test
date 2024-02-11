@@ -1,6 +1,5 @@
 //~==== Вариант МОЙ ===============================================
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
+
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
@@ -31,14 +30,14 @@ form.addEventListener("submit", function (event) {
                 title: "Success",
                 message: `✅ Fulfilled promise in ${delay}ms`,
             });
-        },
-        (delay) => {
+        })
+        .catch((delay) => {
             iziToast.error({
                 title: "Error",
                 message: `❌ Rejected promise in ${delay}ms`,
             });
         }
-    );
+        );
 });
 
 
